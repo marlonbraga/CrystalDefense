@@ -31,7 +31,7 @@ public class SpawnPoint : MonoBehaviour
     private void CreateEnemyGameObject(Vector3 point)
     {
         var enemy = Instantiate(enemyPrefab, point, Quaternion.identity);
-        enemy.GetComponent<Enemy>().life = 5;
+        enemy.transform.GetChild(0).GetComponent<Enemy>().life = 5;
         enemy.transform.parent = transform;
     }
 

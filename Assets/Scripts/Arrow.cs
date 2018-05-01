@@ -12,15 +12,20 @@ public class Arrow : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		Destroy(gameObject, 2f);
 	}
-	void Update () {
+	void Update(){
 		if(flying)
-			rb.AddForce(-transform.right * thrust);
+			rb.AddForce(transform.forward * thrust);
 	}
 	void OnCollisionEnter(Collision collision) {
 		flying = false;
+		transform.parent = collision.transform.parent;
+		if(!collision.gameObject.GetComponent<Arrow>()) {
+			transform.position = collision.contacts[0].point;
+			GetComponent<Collider>().enabled = false;
+		}
 		if(collision.gameObject.GetComponent<Enemy>()) {
 			collision.gameObject.GetComponent<Enemy>().TakeDamage(hitPoints);
 		}
-		Destroy(gameObject, .2f);
+		Destroy(gameObject, 2.2f);
 	}
 }

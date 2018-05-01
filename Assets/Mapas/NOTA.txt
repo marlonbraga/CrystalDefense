@@ -1,0 +1,1 @@
+Todos os materiais na UNity usam Metallic/Roughness. Todos com Metalic completamente preto e Roughness completamente branco

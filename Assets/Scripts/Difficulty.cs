@@ -77,22 +77,19 @@ public class Difficulty : MonoBehaviour
 
     public static Difficulties GetCurrentDifficult()
     {
-        foreach (var diff in DifficultStaticList)
-        {
-            if (CurrentStaticDifficult == diff.difficultyLevel)
-            {
-                return diff;
-            }
-        }
+		foreach(var diff in DifficultStaticList) {
+			if(CurrentStaticDifficult == diff.difficultyLevel) {
+				return diff;
+			}
+		}
+		return DifficultStaticList[0];
+	}
 
-        return DifficultStaticList[0];
-    }
+	#endregion Methods
 
-    #endregion Methods
+	#region UnityMethods
 
-    #region UnityMethods
-
-    private void Start()
+	private void Start()
     {
         DifficultStaticList = difficultyList;
         CurrentStaticDifficult = currentDifficult;
