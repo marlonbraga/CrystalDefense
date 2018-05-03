@@ -14,16 +14,26 @@ public class Enemy:MonoBehaviour {
 	#endregion UnityMethods
 
 	#region Methods
-	private void Die() {
-		StopAllCoroutines();
+	IEnumerator Die() {
 		Debug.Log(name + " morreu");
 		GetComponent<Animator>().Play("Viking_Death");
+		while(!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Viking_Death")) {
+			yield return new WaitForSeconds(0.001f);
+		}
+		while(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Viking_Death")) {
+			if(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.99f) {
+				yield return new WaitForSeconds(100f * Time.deltaTime);
+				Destroy(gameObject);
+				break;
+			}
+			yield return new WaitForSeconds(0.001f);
+		}
 	}
 	IEnumerator WalkAtTower() {
 		GetComponent<Animator>().applyRootMotion = true;
 		GetComponent<Animator>().Play("Viking_Walk");
-		while(Vector3.Distance(Tower.Position, transform.position) >= 0.02f) {//1.7f | 0.02f
-			transform.position = Vector3.MoveTowards(transform.position, Tower.Position, 0.01f * Time.deltaTime);//1f | 0.01f
+		while(Vector3.Distance(Tower.Position, transform.position) >= 0.04f) {//1.7f | 0.02f
+			transform.position = Vector3.MoveTowards(transform.position, Tower.Position, 0.02f * Time.deltaTime);//1f | 0.01f
 			yield return null;
 		}
 		StartCoroutine(Attacking());
@@ -59,7 +69,8 @@ public class Enemy:MonoBehaviour {
 		Debug.Log(name + "sofreu " + damage + " de dano");
 		life -= damage;
 		if(life <= 0) {
-			Die();
+			StopAllCoroutines();//If walking, Viking stop to move
+			StartCoroutine(Die());
 		}
 	}
 	#endregion Methods
