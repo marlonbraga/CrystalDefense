@@ -28,6 +28,17 @@ public class Tower:MonoBehaviour {
 		}
 	}
 	public void GameOver() {
+		GetComponent<ParticleSystem>().Play();
+		GetComponent<AudioSource>().Play();
+		transform.GetChild(0).gameObject.SetActive(false);
+		Enemy[] Vikigns = FindObjectsOfType(typeof(Enemy)) as Enemy[];
+		foreach(var v in Vikigns) {
+			v.GetComponent<Animator>().enabled = false;
+			Transform t = v.transform;
+			while(!t.GetComponent<SpawnPoint>())
+				t = t.parent;
+			t.GetComponent<SpawnPoint>().enabled = false;
+		}
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }

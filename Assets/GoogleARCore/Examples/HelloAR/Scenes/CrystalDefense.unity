@@ -821,11 +821,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.size
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4286168863290362, guid: ce2d8f5f082678a4788bfa6f96e4b97c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -860,78 +855,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1033201310958998, guid: ce2d8f5f082678a4788bfa6f96e4b97c, type: 2}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[0]
-      value: 
-      objectReference: {fileID: 1015629958, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[1]
-      value: 
-      objectReference: {fileID: -151897965, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[2]
-      value: 
-      objectReference: {fileID: -2084109067, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[3]
-      value: 
-      objectReference: {fileID: -2021744751, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[4]
-      value: 
-      objectReference: {fileID: -482078161, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[5]
-      value: 
-      objectReference: {fileID: 1601889821, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[6]
-      value: 
-      objectReference: {fileID: 422744333, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[7]
-      value: 
-      objectReference: {fileID: 1256116472, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[8]
-      value: 
-      objectReference: {fileID: 501972116, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[9]
-      value: 
-      objectReference: {fileID: 892021002, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: crystalMaterial.Array.data[10]
-      value: 
-      objectReference: {fileID: -47172579, guid: 9f192663ef2449d47aa7aaab8f0fbf6e,
-        type: 3}
-    - target: {fileID: 114277483710597690, guid: ce2d8f5f082678a4788bfa6f96e4b97c,
-        type: 2}
-      propertyPath: life
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce2d8f5f082678a4788bfa6f96e4b97c, type: 2}
