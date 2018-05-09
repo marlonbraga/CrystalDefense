@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 
 public class Tower:MonoBehaviour {
-	public int life = 10;
+	public int life = 120;
 	private static Vector3 position;
 	public static Tower tower;
 	public static Vector3 Position {
@@ -13,22 +13,16 @@ public class Tower:MonoBehaviour {
 			position = value;
 		}
 	}
-	private Material crystalMaterial;
+	[SerializeField]
+	private Material[] crystalMaterial;
 	private void Start() {
 		Position = transform.position;
 		tower = this;
-		crystalMaterial = GetComponentInChildren<MeshRenderer>().material;
-	}
-
-	private void Update() {
-		if(life == 0) {
-			Destroy(gameObject);
-		}
 	}
 
 	public void TakeDamage(int damage) {
 		life -= damage;
-
+		transform.GetChild(0).GetComponent<MeshRenderer>().material = crystalMaterial[Mathf.Max(0,((life-20)/10))];
 		if(life <= 0) {
 			GameOver();
 		}
@@ -36,6 +30,4 @@ public class Tower:MonoBehaviour {
 	public void GameOver() {
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-
-
 }

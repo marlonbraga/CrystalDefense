@@ -50,7 +50,6 @@ public class Enemy:MonoBehaviour {
 			if(animationTime >= 0.4f && newBlow) {//Momento do cair do machado na animação
 				transform.GetComponent<AudioSource>().Play();
 				Tower.tower.TakeDamage(1);
-				Debug.Log("Cristal sofre dano!");
 				newBlow = false;
 			}
 			lastTime = animationTime;
