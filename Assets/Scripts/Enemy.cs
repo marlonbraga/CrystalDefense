@@ -34,6 +34,7 @@ public class Enemy:MonoBehaviour {
 		GetComponent<Animator>().Play("Viking_Walk");
 		while(Vector3.Distance(Tower.Position, transform.position) >= 0.04f) {//1.7f | 0.02f
 			transform.position = Vector3.MoveTowards(transform.position, Tower.Position, 0.02f * Time.deltaTime);//1f | 0.01f
+			transform.position = new Vector3(transform.position.x, Tower.tower.transform.position.y, transform.position.z);
 			yield return null;
 		}
 		StartCoroutine(Attacking());
